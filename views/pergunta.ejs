@@ -1,0 +1,33 @@
+<%- include ('partials/header.ejs') %>
+<body>
+   <%- include ('partials/navbar.ejs') %>
+   <div class="container">
+      <hr>
+      <h1>  <%= pergunta.titulo %></h1>
+      <p class="text-secondary"> <b> Descrição:</b> <%= pergunta.descricao %></p>
+      <hr>
+      <form method="POST" action="/responder">
+         <h3 class="text-light">Responda</h3>
+         <label class="text-light" >Resposta:</label>
+         <textarea required placeholder="Digite sua resposta" class="form-control" name="corpo"></textarea>
+         <br>
+         <input  type="hidden" name="pergunta" value="<%= pergunta.id %>">
+         <button type="submit" class="btn btn-secondary">Responder</button>
+      </form>
+      <hr>
+      <h3 class="text-light">Respostas</h3>
+      <% if(respostas < 1){ %>
+      <b class="text-light"> Seja o primeiro a responder!</b>
+      <% } else { %>
+      <% cont=1; respostas.forEach(resposta =>  {%>
+      <hr>
+      <div class="card bg-dark text-light">
+         <div class="card-body">
+            <p> <%= cont %>.R: <%= resposta.corpo %> 
+         </div>
+      </div>
+      <% cont++ }) %>
+      <% } %> 
+   </div>
+</body>
+<%- include ('partials/footer.ejs') %>
