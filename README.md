@@ -2,4 +2,4 @@
 Projeto de Node.js com fins de estudo.
 
 Neste projeto usei Node.JS, EJS, MySQL, Sequelize, Express e Nodemon.
-No front end usei Bootstrap na versão mais recente. (v5.1.3)
+<br>No front end usei Bootstrap na versão mais recente. (v5.1.3)
